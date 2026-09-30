@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>The Wedding of Angga & Hani</title>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Container Burung Merpati / Efek Melayang -->
+  <div id="butterfly-container"></div>
+
+  <div class="mobile-wrapper">
+
+    <!-- Audio Element -->
+    <audio id="cover-music" loop preload="auto">
+      <source src="musik-cover.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="bg-music" loop preload="auto">
+      <source src="musik.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Tombol Musik -->
+    <button id="music-control" class="music-btn hide" aria-label="Toggle Music">
+      <i class="fas fa-compact-disc fa-spin"></i>
+    </button>
+
+    <!-- Cover Section (SUDAH DIRAPIKAN DARI DUPLIKASI TAG) -->
+    <section id="cover" class="section-cover">
+      <div class="door-wrapper">
+        <div class="door door-left"></div>
+        <div class="door door-right"></div>
+      </div>
+
+      <div class="cover-content" data-aos="zoom-in" data-aos-duration="1200">
+        <div class="mini-glass-card">
+          <p class="sub-title">THE WEDDING OF</p>
+          <h1 class="main-title floating-element">Angga & Hani</h1>
+          
+          <div class="guest-box">
+            <p class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+            <h3 id="guest-name">NAMA TAMU</h3>
+            <p class="guest-location">Di Tempat</p>
+          </div>
+
+          <button id="btn-open" class="btn-primary">
+            <i class="fas fa-envelope-open"></i> Buka Undangan
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-container hide">
+
+      <!-- Hero Section -->
+      <section class="section-hero bg-section bg-hero">
+        <div class="hero-content-box" data-aos="fade-up" data-aos-duration="1000">
+          <div class="hero-frame-container floating-element">
+            <div class="hero-frame-border">
+              <img src="foto-hero.jpg" alt="Foto Mempelai Angga & Hani" class="hero-img">
+            </div>
+          </div>
+
+          <div class="hero-text-group">
+            <p class="sub-title">THE WEDDING OF</p>
+            <h1 class="couple-title">Angga & Hani</h1>
+            <div class="divider-gold"></div>
+            <p class="wedding-date-hero">Minggu, 1 November 2026</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Couple Section -->
+      <section class="section-couple bg-section bg-couple">
+        <h2 class="section-heading" data-aos="fade-up">The Couple</h2>
+        <p class="salam" data-aos="fade-up">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+        <p class="intro-text" data-aos="fade-up">
+          Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami:
+        </p>
+        
+        <div class="couple-cards">
+          <!-- Mempelai Wanita -->
+<div class="profile-card" data-aos="fade-up" data-aos-delay="200">
+  <div class="photo-frame floating-element">
+    <img src="foto-mempelai-wanita.jpg" alt="Hanifatin Azizah" class="img-slide img-1">
+    <img src="foto-mempelai-wanita-2.jpg" alt="Hanifatin Azizah 2" class="img-slide img-2">
+  </div>
+  <h3>Hanifatin Azizah, S.Pd.</h3>
+  <p class="parents">Putri dari Bapak H. Nursyam <br>& Ibu Kunasri, S.Pd.</p>
+  <a href="https://www.instagram.com/hn.fatin" target="_blank" class="btn-social"><i class="fab fa-instagram"></i> Instagram</a>
+</div>
+
+<!-- Mempelai Pria -->
+<div class="profile-card" data-aos="fade-up" data-aos-delay="300">
+  <div class="photo-frame floating-element">
+    <img src="foto-mempelai-pria.jpg" alt="Angga Dedy Candra Setyawan" class="img-slide img-1">
+    <img src="foto-mempelai-pria-2.jpg" alt="Angga Dedy Candra Setyawan 2" class="img-slide img-2">
+  </div>
+  <h3>Angga Dedy C. S., M.Pd.</h3>
+  <p class="parents">Putra dari Bapak H. Mono (Alm.) <br>& Ibu Hj. Sri Sulistyowati, S.Pd.</p>
+  <a href="https://www.instagram.com/candra.adcs" target="_blank" class="btn-social"><i class="fab fa-instagram"></i> Instagram</a>
+</div>
+      </section>
+
+      <!-- Countdown Section -->
+      <section class="section-countdown bg-section bg-countdown">
+        <div class="countdown-wrapper" data-aos="zoom-in">
+          <div class="timer-box"><span id="days">0</span><small>Hari</small></div>
+          <div class="timer-box"><span id="hours">0</span><small>Jam</small></div>
+          <div class="timer-box"><span id="minutes">0</span><small>Min</small></div>
+          <div class="timer-box"><span id="seconds">0</span><small>Det</small></div>
+        </div>
+        <blockquote class="quran-quote" data-aos="fade-up">
+          "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang."
+          <span>(QS. Ar-Rum: 21)</span>
+        </blockquote>
+      </section>
+
+      <!-- Event Section -->
+      <section class="section-event bg-section bg-event">
+        <h2 class="section-heading" data-aos="fade-up">Wedding Event</h2>
+        <p class="event-intro" data-aos="fade-up">
+          Dengan mengucap syukur kepada Allah SWT, kami bermaksud mengundang Anda pada:
+        </p>
+
+        <div class="event-grid">
+          <!-- Akad Nikah -->
+          <div class="event-card" data-aos="fade-up" data-aos-delay="100">
+            <h3>Akad Nikah</h3>
+            <p class="event-date"><i class="far fa-calendar-alt"></i> Minggu, 1 November 2026</p>
+            <p class="event-time"><i class="far fa-clock"></i> 09.00 WIB s.d Selesai</p>
+            <p class="event-location">
+              <strong>Kediaman Mempelai Wanita</strong><br>
+              Desa Sumberoto RT.08 RW.03, Kec. Kepohbaru, Kab. Bojonegoro
+            </p>
+            <a href="https://maps.google.com/?dirflg=d&amp;daddr=-7.1741420,112.0603030" target="_blank" class="btn-map">
+              <i class="fas fa-map-marker-alt"></i> Google Maps
+            </a>
+          </div>
+
+          <!-- Resepsi -->
+          <div class="event-card" data-aos="fade-up" data-aos-delay="200">
+            <h3>Resepsi</h3>
+            <p class="event-date"><i class="far fa-calendar-alt"></i> Minggu, 1 November 2026</p>
+            <p class="event-time"><i class="far fa-clock"></i> 12.30 WIB s.d Selesai</p>
+            <p class="event-location">
+              <strong>Kediaman Mempelai Wanita</strong><br>
+              Desa Sumberoto RT.08 RW.03, Kec. Kepohbaru, Kab. Bojonegoro
+            </p>
+            <a href="https://maps.google.com/?dirflg=d&amp;daddr=-7.1741420,112.0603030" target="_blank" class="btn-map">
+              <i class="fas fa-map-marker-alt"></i> Google Maps
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section class="section-gallery bg-section bg-gallery">
+        <h2 class="section-heading" data-aos="fade-up">Wedding Gallery</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100"><img src="gallery-1.jpg" alt="Gallery 1"></div>
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="150"><img src="gallery-2.jpg" alt="Gallery 2"></div>
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200"><img src="gallery-3.jpg" alt="Gallery 3"></div>
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="250"><img src="gallery-4.jpg" alt="Gallery 4"></div>
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300"><img src="gallery-5.jpg" alt="Gallery 5"></div>
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="350"><img src="gallery-6.jpg" alt="Gallery 6"></div>
+        </div>
+      </section>
+
+<!-- Gift Section -->
+      <section class="section-gift bg-section bg-gift">
+        <h2 class="section-heading" data-aos="fade-up">Wedding Gift</h2>
+        <p class="gift-text" data-aos="fade-up">
+          Bagi rekan-rekan yang hendak memberikan tanda kasih, dapat melalui nomor rekening berikut:
+        </p>
+
+        <div class="bank-cards">
+          <!-- KARTU ATM 1: HANIFATIN AZIZAH -->
+          <div class="atm-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="atm-header">
+              <span class="bank-name">BANK BRI</span>
+              <i class="fas fa-wifi contact-less"></i>
+            </div>
+            <div class="atm-chip-row">
+              <div class="atm-chip"></div>
+            </div>
+            <div class="atm-body">
+              <span class="card-label">Nomor Rekening</span>
+              <p class="rekening-num" id="rek-bri-hani">6189 0100 6369 539</p>
+            </div>
+            <div class="atm-footer">
+              <div class="card-holder">
+                <span class="card-label">Atas Nama</span>
+                <p class="rekening-name">HANIFATIN AZIZAH</p>
+              </div>
+              <button onclick="copyToClipboard('618901006369539')" class="btn-copy">
+                <i class="far fa-copy"></i> Salin
+              </button>
+            </div>
+          </div>
+
+          <!-- KARTU ATM 2: ANGGA DEDY CANDRA S -->
+          <div class="atm-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="atm-header">
+              <span class="bank-name">BANK BRI</span>
+              <i class="fas fa-wifi contact-less"></i>
+            </div>
+            <div class="atm-chip-row">
+              <div class="atm-chip"></div>
+            </div>
+            <div class="atm-body">
+              <span class="card-label">Nomor Rekening</span>
+              <p class="rekening-num" id="rek-bri-angga">3130 0102 1893 537</p>
+            </div>
+            <div class="atm-footer">
+              <div class="card-holder">
+                <span class="card-label">Atas Nama</span>
+                <p class="rekening-name">ANGGA DEDY CANDRA S</p>
+              </div>
+              <button onclick="copyToClipboard('313001021893537')" class="btn-copy">
+                <i class="far fa-copy"></i> Salin
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="gift-address" data-aos="fade-up">
+          <i class="fas fa-gift gift-icon"></i>
+          <p class="gift-title">Kirim Kado / Fisi Kado Ke:</p>
+          <p class="gift-detail">
+            <strong>Hanifatin Azizah</strong><br>
+            Desa Sumberoto RT.08 RW.03, Kec. Kepohbaru, Kab. Bojonegoro
+          </p>
+        </div>
+      </section>
+
+<!-- Confirmation Section -->
+      <section class="section-gift-confirm bg-section bg-confirm" data-aos="fade-up">
+        <h2 class="section-heading">Gift Confirmation</h2>
+        <p class="confirm-text">
+          Mohon isi formulir di bawah ini untuk mengonfirmasi kiriman kado / transfer Anda via WhatsApp:
+        </p>
+        
+        <form id="form-gift" class="custom-form confirm-form">
+          <div class="form-group">
+            <label for="gift-nama"><i class="fas fa-user"></i> Nama Lengkap</label>
+            <input type="text" id="gift-nama" required placeholder="Contoh: Budi Santoso">
+          </div>
+
+          <div class="form-group">
+            <label for="gift-bank"><i class="fas fa-university"></i> Bank / Metode Kirim</label>
+            <input type="text" id="gift-bank" required placeholder="Contoh: BRI / BCA / Paket Kado">
+          </div>
+
+          <div class="form-group">
+            <label for="gift-nominal"><i class="fas fa-money-bill-wave"></i> Nominal / Jenis Kado</label>
+            <input type="text" id="gift-nominal" required placeholder="Contoh: Rp 100.000 / Kado Fisik">
+          </div>
+
+          <div class="form-group">
+            <label for="gift-ucapan"><i class="fas fa-comment-dots"></i> Ucapan & Doa</label>
+            <textarea id="gift-ucapan" rows="3" placeholder="Tuliskan pesan atau ucapan selamat..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-wa-confirm">
+            <i class="fab fa-whatsapp"></i> Konfirmasi via WhatsApp
+          </button>
+        </form>
+      </section>
+
+      <!-- RSVP Section -->
+      <section class="section-rsvp bg-section bg-rsvp" data-aos="fade-up">
+        <h2 class="section-heading">RSVP & Ucapan</h2>
+        <form id="form-rsvp" class="custom-form">
+          <div class="form-group">
+            <label>Nama Lengkap</label>
+            <input type="text" id="rsvp-nama" required placeholder="Nama Anda">
+          </div>
+          <div class="form-group">
+            <label>Status Kehadiran</label>
+            <select id="rsvp-status" required>
+              <option value="">-- Pilih Status Kehadiran --</option>
+              <option value="Hadir">Hadir</option>
+              <option value="Tidak Hadir">Tidak Hadir</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Ucapan / Pesan</label>
+            <textarea id="rsvp-ucapan" rows="3" required placeholder="Tulis ucapan atau pesan Anda..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Kirim Ucapan</button>
+        </form>
+
+        <div class="comments-container">
+          <h3>Ucapan Doa</h3>
+          <div id="comments-list" class="comments-list"></div>
+        </div>
+      </section>
+
+      <!-- Footer Section -->
+      <section class="section-footer bg-section bg-footer" data-aos="zoom-in">
+        <div class="footer-card">
+          <h2>Terima Kasih</h2>
+          <h1 class="couple-title">Angga & Hani</h1>
+          <p class="footer-text">
+            Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir memberikan doa restu.
+          </p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1138 @@
+/* ==========================================
+   1. CSS VARIABLES
+   ========================================== */
+:root {
+  --primary-gold: #b38b14;
+  --secondary-gold: #8f6a00;
+  --dark-bg: #0f1412;
+  --card-bg: rgba(255, 255, 255, 0.88);
+  --text-color: #1a1a1a;
+  --text-gold: #8f6b00;
+  --font-serif: 'Cinzel', serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-sans: 'Montserrat', sans-serif;
+
+  /* Gambar Background */
+  --bg-cover: url('bg-cover.png');
+  --door-left: url('pintu-kiri.png');
+  --door-right: url('pintu-kanan.png');
+  --bg-hero: url('bg-section-hero.png');
+  --bg-couple: url('bg-section-couple.png');
+  --bg-countdown: url('bg-section-countdown.png');
+  --bg-event: url('bg-section-event.png');
+  --bg-gallery: url('bg-section-gallery.png');
+  --bg-gift: url('bg-section-gift.png');
+  --bg-confirm: url('bg-section-rsvp.png');
+  --bg-rsvp: url('bg-section-rsvp.png');
+  --bg-footer: url('bg-section-footer.png');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-color);
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.mobile-wrapper {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100vh;
+  background-color: transparent;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.hide {
+  display: none !important;
+}
+
+/* Transisi Kemunculan Konten Utama */
+.fade-in-section {
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tipografi */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  text-align: center;
+  color: #1a1a1a;
+}
+
+.main-title, .couple-title {
+  font-family: var(--font-script);
+  font-size: 3rem;
+  color: #a37500;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9), 0 0 10px rgba(255, 255, 255, 0.7);
+  margin: 10px 0;
+}
+
+.sub-title {
+  font-family: var(--font-serif);
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  color: #2b2b2b;
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
+}
+
+.section-heading {
+  font-size: 1.8rem;
+  color: #8f6a00;
+  margin-bottom: 20px;
+  position: relative;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+}
+
+.section-heading::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: var(--primary-gold);
+  margin: 8px auto 0;
+}
+
+.divider-gold {
+  width: 80px;
+  height: 1px;
+  background: var(--primary-gold);
+  margin: 15px auto;
+}
+
+/* Base Style Section & Background */
+.bg-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px 20px;
+  z-index: 1;
+  border-bottom: 1px solid rgba(179, 139, 20, 0.3);
+}
+
+/* Set Background Image */
+.section-cover { background-image: var(--bg-cover); }
+.bg-hero { background-image: var(--bg-hero); }
+.bg-couple { background-image: var(--bg-couple); }
+.bg-countdown { background-image: var(--bg-countdown); }
+.bg-event { background-image: var(--bg-event); }
+.bg-gallery { background-image: var(--bg-gallery); }
+.bg-gift { background-image: var(--bg-gift); }
+.bg-confirm { background-image: var(--bg-confirm); }
+.bg-rsvp { background-image: var(--bg-rsvp); }
+.bg-footer { background-image: var(--bg-footer); }
+
+/* ==========================================
+   COVER SECTION - MINI GLASS CARD
+   ========================================== */
+.section-cover {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.6s ease;
+}
+
+.cover-content {
+  position: relative;
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.mini-glass-card {
+  width: 82%;
+  max-width: 260px;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 14px;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.mini-glass-card .sub-title {
+  font-family: var(--font-serif);
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  color: #2b2b2b;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.mini-glass-card .main-title {
+  font-family: var(--font-script);
+  font-size: 2.1rem;
+  color: #a37500;
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+
+.mini-glass-card .guest-box {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 6px 8px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  border: 1px dashed rgba(163, 117, 0, 0.4);
+}
+
+.mini-glass-card .guest-label {
+  font-size: 0.68rem;
+  color: #2b2b2b;
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+
+.mini-glass-card #guest-name {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: #8f6a00;
+  font-weight: 700;
+  margin: 2px 0;
+  word-break: break-word;
+}
+
+.mini-glass-card .guest-location {
+  font-size: 0.68rem;
+  color: #2b2b2b;
+  font-weight: 500;
+}
+
+.mini-glass-card .btn-primary {
+  background: linear-gradient(135deg, #c59b27, #8f6a00);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 7px 18px;
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.mini-glass-card .btn-primary:active {
+  transform: scale(0.95);
+}
+
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--primary-gold);
+  color: #ffffff;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+.section-hero {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.hero-frame-container {
+  width: 190px;
+  height: 270px;
+  margin: 0 auto 20px;
+  position: relative;
+  border-radius: 16px;
+  padding: 6px;
+  background: linear-gradient(135deg, #ffe082 0%, #b38b14 35%, #ffd700 50%, #8f6a00 80%, #fff3a0 100%);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 0 12px rgba(212, 175, 55, 0.35);
+}
+
+.hero-frame-border {
+  width: 100%;
+  height: 100%;
+  border-radius: 11px;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background-color: #222;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.wedding-date-hero {
+  color: #2b2b2b;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* ==========================================
+   SECTION MEMPELAI & PHOTO FRAME (HILANGKAN BORDER PUTIH)
+   ========================================== */
+.section-couple { 
+  text-align: center; 
+}
+
+.salam {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: #8f6a00;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
+}
+
+.intro-text {
+  font-size: 0.85rem;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  color: #2c2c2c;
+  font-weight: 500;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.9);
+}
+
+.couple-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* KARTU MEMPELAI: Latar belakang dan border putih dihilangkan total */
+.profile-card {
+  background: transparent !important;   /* Menghilangkan background putih */
+  border: none !important;               /* Menghilangkan border putih/emas di sekitar kartu */
+  box-shadow: none !important;           /* Menghilangkan bayangan boks */
+  padding: 10px 0;
+  backdrop-filter: none !important;      /* Menghilangkan efek buram boks */
+}
+
+/* PHOTO FRAME: Di Belakang Foto Mempelai */
+.photo-frame {
+  width: 220px;
+  height: 320px;
+  margin: 0 auto 22px;
+  border-radius: 16px;
+  position: relative;
+  background: transparent !important;   /* Menghilangkan latar putih/gelap di belakang foto */
+  border: none !important;               /* Menghilangkan border pada frame luar */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Bayangan lembut khusus pada foto */
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+  display: block;
+  border: 1px solid rgba(179, 139, 20, 0.4); /* Lis garis emas tipis agar foto tetap terbingkai rapi */
+}
+
+.profile-card h3 {
+  font-family: var(--font-script);
+  font-size: 1.8rem;
+  color: #8f6a00;
+  margin-bottom: 8px;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+.parents {
+  font-size: 0.82rem;
+  line-height: 1.4;
+  margin-bottom: 14px;
+  color: #222;
+  font-weight: 500;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.9);
+}
+
+/* Countdown & Quote */
+.countdown-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.timer-box {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--primary-gold);
+  padding: 10px 5px;
+  border-radius: 8px;
+  min-width: 60px;
+  text-align: center;
+}
+
+.timer-box span {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #8f6a00;
+}
+
+.timer-box small {
+  font-size: 0.7rem;
+  color: #444;
+  font-weight: 600;
+}
+
+.quran-quote {
+  color: #2c2c2c;
+  font-style: italic;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  background: var(--card-bg);
+  padding: 18px;
+  border-radius: 10px;
+  border-left: 4px solid var(--primary-gold);
+}
+
+.quran-quote span {
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+  font-weight: 700;
+  color: #8f6a00;
+}
+
+/* ==========================================
+   SECTION WEDDING EVENT (ELEGANT & PROPOSIONAL)
+   ========================================== */
+.section-event {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.event-intro {
+  text-align: center;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #2b2b2b;
+  font-weight: 500;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
+}
+
+.event-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+/* Kartu Acara */
+.event-card {
+  /* Transparansi dinaikkan dari 0.82 menjadi 0.25 (opacity 25%) */
+  background: rgba(255, 255, 255, 0.25) !important;
+  
+  /* Buram halus di latar belakang agar teks tetap terbaca dengan jelas */
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  
+  padding: 28px 20px 24px;
+  border-radius: 16px;
+  
+  /* Lis garis batas transparan lembut */
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  position: relative;
+}
+
+/* Judul Acara (Akad / Resepsi) */
+.event-card h3 {
+  font-family: var(--font-serif); /* Font Cinzel */
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #8f6a00;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.event-card h3::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+  margin: 8px auto 0;
+}
+
+/* Informasi Tanggal, Jam & Lokasi */
+.event-date, 
+.event-time {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #222222;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.event-date i, 
+.event-time i {
+  color: #b38b14;
+  font-size: 0.95rem;
+}
+
+.event-location {
+  font-family: var(--font-sans);
+  font-size: 0.83rem;
+  line-height: 1.5;
+  color: #1a1a1a;
+  margin: 14px 0 18px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.2) !important; /* Transparan lembut */
+  border-radius: 8px;
+  border: 1px dashed rgba(179, 139, 20, 0.5);
+}
+
+.event-location strong {
+  font-family: var(--font-serif);
+  color: #8f6a00;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+/* Tombol Google Maps */
+.btn-map {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 22px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #c59b27, #8f6a00);
+  color: #ffffff !important;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  box-shadow: 0 3px 10px rgba(143, 106, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 4px;
+}
+
+.btn-map:active {
+  transform: scale(0.96);
+}
+
+.rekening-num {
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #111;
+  margin: 5px 0;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.gallery-item {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--primary-gold);
+  aspect-ratio: 3 / 4;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Tombol dan Form */
+.btn-primary, .btn-map, .btn-social, .btn-copy {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background: linear-gradient(135deg, #c59b27, #8f6a00);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.custom-form {
+  background: var(--card-bg);
+  padding: 20px 15px;
+  border-radius: 12px;
+  border: 1px solid var(--primary-gold);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #8f6a00;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+  padding: 10px;
+  border: 1px solid rgba(179, 139, 20, 0.4);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.comments-container { margin-top: 25px; }
+.comments-list { max-height: 250px; overflow-y: auto; }
+
+/* ==========================================
+   FOOTER SECTION (KARTU SANGAT TRANSPARAN)
+   ========================================== */
+.section-footer {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.footer-card {
+  text-align: center;
+  max-width: 380px;
+  margin: 0 auto;
+  
+  /* Transparansi dinaikkan (opacity putih menjadi 25%) */
+  background: rgba(255, 255, 255, 0.25) !important;
+  
+  /* Efek buram transparan halus */
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  
+  padding: 30px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(179, 139, 20, 0.4) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.footer-card h2 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: #8f6a00;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+}
+
+.footer-card .couple-title {
+  font-size: 2.5rem;
+  margin: 8px 0;
+}
+
+.footer-text {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #1a1a1a;
+  margin-top: 12px;
+  font-weight: 500;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
+}
+
+/* Animasi Merpati */
+#butterfly-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.pigeon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  opacity: 0.9;
+  animation: floatPigeon 14s infinite ease-in-out;
+}
+
+.pigeon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 16px;
+  height: 12px;
+  background: linear-gradient(135deg, #ffffff 60%, #e0e0e0 100%);
+  border-radius: 100% 0% 80% 20%;
+  border: 1px solid rgba(179, 139, 20, 0.3);
+  transform-origin: right bottom;
+  animation: flapPigeonLeft 0.28s infinite alternate ease-in-out;
+}
+
+.pigeon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -2px;
+  width: 16px;
+  height: 12px;
+  background: linear-gradient(225deg, #ffffff 60%, #e0e0e0 100%);
+  border-radius: 0% 100% 20% 80%;
+  border: 1px solid rgba(179, 139, 20, 0.3);
+  transform-origin: left bottom;
+  animation: flapPigeonRight 0.28s infinite alternate ease-in-out;
+}
+
+@keyframes flapPigeonLeft {
+  0% { transform: rotate(-10deg) scaleY(1); }
+  100% { transform: rotate(55deg) scaleY(0.6); }
+}
+
+@keyframes flapPigeonRight {
+  0% { transform: rotate(10deg) scaleY(1); }
+  100% { transform: rotate(-55deg) scaleY(0.6); }
+}
+
+@keyframes floatPigeon {
+  0% { transform: translate(0, 105vh) scale(0.6) rotate(-10deg); opacity: 0; }
+  10% { opacity: 0.95; }
+  25% { transform: translate(25vw, 75vh) scale(0.85) rotate(12deg); }
+  50% { transform: translate(-15vw, 45vh) scale(1) rotate(-8deg); }
+  75% { transform: translate(20vw, 20vh) scale(0.8) rotate(15deg); }
+  90% { opacity: 0.95; }
+  100% { transform: translate(-10vw, -10vh) scale(0.5) rotate(-5deg); opacity: 0; }
+}
+
+/* ==========================================
+   SECTION WEDDING GIFT - ATM CARD STYLE
+   ========================================== */
+.section-gift {
+  text-align: center;
+}
+
+.gift-text {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  color: #2b2b2b;
+  font-weight: 500;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
+}
+
+.bank-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 15px;
+}
+
+/* KARTU ATM ELEGAN (DESAIN BENTUK ATM SUNGGUHAN) */
+.atm-card {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  aspect-ratio: 1.586 / 1; /* Rasio Standar Kartu Kredit/ATM */
+  border-radius: 16px;
+  padding: 20px;
+  background: linear-gradient(135deg, #1f2421 0%, #0d110f 40%, #2b2308 100%);
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35), 
+              inset 0 0 15px rgba(212, 175, 55, 0.15);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/* ORNAMEN KACA KILAUMAN EMAS PADA KARTU */
+.atm-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* HEADER ATM: NAMA BANK & CONTACTLESS */
+.atm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.bank-name {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffd700;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.contact-less {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.1rem;
+  transform: rotate(90deg);
+}
+
+/* CHIP ATM KUNING EMAS 3D */
+.atm-chip-row {
+  margin: 6px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.atm-chip {
+  width: 42px;
+  height: 30px;
+  background: linear-gradient(135deg, #ffe082, #b38b14);
+  border-radius: 6px;
+  position: relative;
+  border: 1px solid #8f6a00;
+  box-shadow: inset 0 0 3px rgba(0,0,0,0.5);
+}
+
+.atm-chip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(0,0,0,0.3);
+}
+
+/* NOMOR REKENING BERGAYA EMBOSS FONT KARTU BANK */
+.atm-body {
+  position: relative;
+  z-index: 2;
+  margin-top: 4px;
+}
+
+.card-label {
+  display: block;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  color: #c59b27;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.atm-card .rekening-num {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.9), 0 0 5px rgba(255, 215, 0, 0.4);
+  margin: 0;
+}
+
+/* FOOTER ATM: ATAS NAMA & TOMBOL SALIN */
+.atm-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  z-index: 2;
+}
+
+.card-holder .rekening-name {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #f0ebd9;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* TOMBOL SALIN REKENING DALAM KARTU */
+.atm-card .btn-copy {
+  background: linear-gradient(135deg, #c59b27, #8f6a00);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.atm-card .btn-copy:active {
+  transform: scale(0.92);
+}
+
+/* BOKS ALAMAT KADO */
+.gift-address {
+  margin-top: 25px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px dashed var(--primary-gold);
+  text-align: center;
+}
+
+.gift-icon {
+  font-size: 1.6rem;
+  color: #8f6a00;
+  margin-bottom: 6px;
+}
+
+.gift-title {
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
+  color: #8f6a00;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.gift-detail {
+  font-size: 0.82rem;
+  color: #222;
+  line-height: 1.5;
+}
+
+/* ==========================================
+   SECTION GIFT CONFIRMATION (PROPOSIONAL & ELEGANT)
+   ========================================== */
+.section-gift-confirm {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.confirm-text {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #222222;
+  font-weight: 500;
+  margin-bottom: 24px;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
+}
+
+/* Form Container Kaca Transparan */
+.confirm-form {
+  max-width: 380px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.35) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  padding: 24px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(179, 139, 20, 0.4) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Form Group & Label */
+.confirm-form .form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.confirm-form .form-group label {
+  font-family: var(--font-serif);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #8f6a00;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.confirm-form .form-group label i {
+  color: #b38b14;
+  font-size: 0.85rem;
+}
+
+/* Input, Select & Textarea */
+.confirm-form input,
+.confirm-form textarea {
+  width: 100%;
+  padding: 11px 14px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(179, 139, 20, 0.35);
+  border-radius: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: #1a1a1a;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-sizing: border-box;
+}
+
+.confirm-form input::placeholder,
+.confirm-form textarea::placeholder {
+  color: #888888;
+  font-size: 0.8rem;
+}
+
+.confirm-form input:focus,
+.confirm-form textarea:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: var(--primary-gold);
+  box-shadow: 0 0 6px rgba(179, 139, 20, 0.3);
+}
+
+/* Tombol WhatsApp Elegan */
+.btn-wa-confirm {
+  width: 100%;
+  padding: 12px 20px;
+  margin-top: 6px;
+  border-radius: 25px;
+  border: none;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-wa-confirm i {
+  font-size: 1.1rem;
+}
+
+.btn-wa-confirm:active {
+  transform: scale(0.97);
+}
+
+/* ==========================================
+   ANIMASI BERGANTI FOTO MEMPELAI (SLIDESHOW)
+   ========================================== */
+
+/* Frame foto sebagai acuan penumpukan gambar */
+.photo-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Pengaturan umum untuk kedua gambar */
+.photo-frame .img-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+  border: 1px solid rgba(179, 139, 20, 0.4);
+}
+
+/* Gambar 1 berada di latar paling bawah */
+.photo-frame .img-1 {
+  z-index: 1;
+}
+
+/* Gambar 2 di atas gambar 1 dan diberi animasi transparansi */
+.photo-frame .img-2 {
+  z-index: 2;
+  animation: crossfadePhoto 8s infinite ease-in-out;
+}
+
+/* Keyframes: Berganti foto setiap 8 detik */
+@keyframes crossfadePhoto {
+  0%, 45% {
+    opacity: 0; /* Menampilkan Foto 1 selama ~3.5 detik */
+  }
+  55%, 90% {
+    opacity: 1; /* Menampilkan Foto 2 selama ~3.5 detik */
+  }
+  100% {
+    opacity: 0; /* Kembali halus ke Foto 1 */
+  }
+}
